@@ -1,1 +1,1 @@
-[Deploy :herb:](https://doraborodina.github.io/animation-app/)
+# [Ecommerce landing page :herb:](https://doraborodina.github.io/animation-app/)
