@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cosmetics store</title>
+    <title>Animation</title>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"
       integrity="sha256-lPE3wjN2a7ABWHbGz7+MKBJaykyzqCbU96BJWjio86U="
@@ -20,17 +20,17 @@
       defer
     ></script>
     <script src="./app.js" defer></script>
-    <link rel="icon" type="image/x-icon" href="./img/herb.png">
+    <script src="./pluggin.js" defer></script>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="pluggin.css" />
+    <link rel="icon" type="image/x-icon" href="./img/herb.png" />
   </head>
 
   <body>
     <div class="container">
       <header class="navigation">
         <nav class="menu">
-          <div class="logo">
-            <span>Lorem</span>
-          </div>
+          <div class="logo"><span>Lorem</span></div>
           <ul>
             <li><a href="">collection</a></li>
             <li><a href="">products</a></li>
@@ -39,56 +39,75 @@
           </ul>
         </nav>
       </header>
+      <button class="flash order round-button" id="scroll-top">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="24px"
+          viewBox="0 0 24 24"
+          width="24px"
+          fill="#000000"
+        >
+          <path d="M0 0h24v24H0V0z" fill="none" />
+          <path
+            d="M6.54 5c.06.89.21 1.76.45 2.59l-1.2 1.2c-.41-1.2-.67-2.47-.76-3.79h1.51m9.86 12.02c.85.24 1.72.39 2.6.45v1.49c-1.32-.09-2.59-.35-3.8-.75l1.2-1.19M7.5 3H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.49c0-.55-.45-1-1-1-1.24 0-2.45-.2-3.57-.57-.1-.04-.21-.05-.31-.05-.26 0-.51.1-.71.29l-2.2 2.2c-2.83-1.45-5.15-3.76-6.59-6.59l2.2-2.2c.28-.28.36-.67.25-1.02C8.7 6.45 8.5 5.25 8.5 4c0-.55-.45-1-1-1z"
+          />
+        </svg>
+      </button>
+      <button class="flash order round-button-2"  >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="24px"
+          viewBox="0 0 24 24"
+          width="24px"
+          fill="#000000"
+        >
+          <path d="M0 0h24v24H0V0z" fill="none" />
+          <path
+            d="M6.54 5c.06.89.21 1.76.45 2.59l-1.2 1.2c-.41-1.2-.67-2.47-.76-3.79h1.51m9.86 12.02c.85.24 1.72.39 2.6.45v1.49c-1.32-.09-2.59-.35-3.8-.75l1.2-1.19M7.5 3H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.49c0-.55-.45-1-1-1-1.24 0-2.45-.2-3.57-.57-.1-.04-.21-.05-.31-.05-.26 0-.51.1-.71.29l-2.2 2.2c-2.83-1.45-5.15-3.76-6.59-6.59l2.2-2.2c.28-.28.36-.67.25-1.02C8.7 6.45 8.5 5.25 8.5 4c0-.55-.45-1-1-1z"
+          />
+        </svg>
+        <span>Book a call</span>
+      </button>
       <header class="header">
         <img src="./img/main_left.png" alt="" class="img-left" />
         <div class="title">
-          <span>Lorem</span>
+          <span >Lorem</span>
           <p>ipsum</p>
-          <div class="order">
-            <a href="">Order Now</a>
-          </div>
+          <button
+            class="order rectangular-button "
+            id="scroll-top-anchor"
+          >
+            Now
+          </button>
+          <button class="order rectangular-button bouncing">
+            Now
+          </button>
+          <button class="order rectangular-button bouncing flash">
+            Now
+          </button>
         </div>
         <img src="./img/main_right.png" alt="" class="img-right" />
       </header>
-      <div class="cards">
-        <h3>Consectetur</h3>
-        <section>
-          <div>
-            <img src="./img/item1.png" alt="" class="item" />
-            <h6>Rose</h6>
-            <p>lorem ipsum dolor</p>
-          </div>
-          <div>
-            <img src="./img/item2.png" alt="" class="item" />
-            <h6>Milk</h6>
-            <p>lorem ipsum dolor</p>
-          </div>
-          <div>
-            <img src="./img/item3.png" alt="" class="item" />
-            <h6>Rest</h6>
-            <p>lorem ipsum dolor</p>
-          </div>
-          <div>
-            <img src="./img/item2.png" alt="" class="item" />
-            <h6>Morning</h6>
-            <p>lorem ipsum dolor</p>
-          </div>
-        </section>
-      </div>
-      <div class="gallery">
-        <h3>Voluptatem</h3>
-        <div class="examples">
-          <div class="example" id="lavander">
-            <img src="./img/lavander-soap.jpg" />
-            <img class="clipped" src="./img/lavander.jpg" />
-            <div class="dragger lavander"></div>
-          </div>
-          <div class="example" id="banana">
-            <img src="./img/banana-bomb.jpg" />
-            <img class="clipped" src="./img/banana.jpg" />
-            <div class="dragger banana"></div>
-          </div>
-        </div>
+      <div class="list">
+        <ul class="block-list-stager">
+          <li class="list-stager-item">1 Lorem, ipsum.</li>
+          <li class="list-stager-item">2 Lorem, ipsum.</li>
+          <li class="list-stager-item">3 Lorem, ipsum.</li>
+          <li class="list-stager-item">4 Lorem, ipsum.</li>
+          <li class="list-stager-item">5 Lorem, ipsum.</li>
+          <li class="list-stager-item">6 Lorem, ipsum.</li>
+          <li class="list-stager-item">7 Lorem, ipsum.</li>
+          <li class="list-stager-item">8 Lorem, ipsum.</li>
+          <li class="list-stager-item">9 Lorem, ipsum.</li>
+          <li class="list-stager-item">10 Lorem, ipsum.</li>
+        </ul>
+        <ul class="block-list">
+          <li class="list-item">1 Lorem, ipsum.</li>
+          <li class="list-item">2 Lorem, ipsum.</li>
+          <li class="list-item">3 Lorem, ipsum.</li>
+          <li class="list-item">4 Lorem, ipsum.</li>
+          <li class="list-item">5 Lorem, ipsum.</li>
+        </ul>
       </div>
       <div class="stats">
         <img src="./img/stats.png" alt="flower" />
@@ -100,40 +119,110 @@
             soluta sit nostrum, omnis sunt reiciendis expedita. Eum repellat
             distinctio nisi.
           </p>
-          <div>
-            <span id="count">0</span>
-            <span>+</span>
+          <div class="counter-trigger-products">
+            <span class="counter-products">0</span> <span>+</span>
             <p>ratione voluptate</p>
           </div>
         </section>
       </div>
-      <footer>
-        <div class="content">
-          <nav class="menu">
-            <div class="logo">
-              <span>Lorem</span>
-            </div>
-            <ul>
-              <li><a href="">collection</a></li>
-              <li><a href="">products</a></li>
-              <li><a href="">offers</a></li>
-              <li><a href="">Contact</a></li>
-            </ul>
-          </nav>
-          <div class="media">
-            <ul>
-              <li><i class="fa fa-facebook"></i></li>
-              <li><i class="fa fa-instagram"></i></li>
-              <li><i class="fa fa-twitter"></i></li>
-            </ul>
-          </div>
-        </div>
-      </footer>
     </div>
-    <div class="line"></div>
-    <div class="info">
-      <a href="">Lorem All rights reserved</a>
-      <a href="">Privacy policy</a>
+    <div class="sync-cards">
+      <div class="sync-card">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
+            <path d="M0 0h24v24H0V0z" fill="none" />
+            <path
+              d="M6.54 5c.06.89.21 1.76.45 2.59l-1.2 1.2c-.41-1.2-.67-2.47-.76-3.79h1.51m9.86 12.02c.85.24 1.72.39 2.6.45v1.49c-1.32-.09-2.59-.35-3.8-.75l1.2-1.19M7.5 3H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.49c0-.55-.45-1-1-1-1.24 0-2.45-.2-3.57-.57-.1-.04-.21-.05-.31-.05-.26 0-.51.1-.71.29l-2.2 2.2c-2.83-1.45-5.15-3.76-6.59-6.59l2.2-2.2c.28-.28.36-.67.25-1.02C8.7 6.45 8.5 5.25 8.5 4c0-.55-.45-1-1-1z" />
+          </svg>
+        </div>
+        <h1 class="">Card</h1>
+        <p>Lorem ipsum, dolor sit amet contur adipisicing elit</p>
+      </div>
+      <div class="sync-card">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
+            <path d="M0 0h24v24H0V0z" fill="none" />
+            <path
+              d="M6.54 5c.06.89.21 1.76.45 2.59l-1.2 1.2c-.41-1.2-.67-2.47-.76-3.79h1.51m9.86 12.02c.85.24 1.72.39 2.6.45v1.49c-1.32-.09-2.59-.35-3.8-.75l1.2-1.19M7.5 3H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.49c0-.55-.45-1-1-1-1.24 0-2.45-.2-3.57-.57-.1-.04-.21-.05-.31-.05-.26 0-.51.1-.71.29l-2.2 2.2c-2.83-1.45-5.15-3.76-6.59-6.59l2.2-2.2c.28-.28.36-.67.25-1.02C8.7 6.45 8.5 5.25 8.5 4c0-.55-.45-1-1-1z" />
+          </svg>
+        </div>
+        <h1 class="">Card</h1>
+        <p>Lorem ipsum, dolor sit amet contur adipisicing elit</p>
+      </div>
+      <div class="sync-card">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
+            <path d="M0 0h24v24H0V0z" fill="none" />
+            <path
+              d="M6.54 5c.06.89.21 1.76.45 2.59l-1.2 1.2c-.41-1.2-.67-2.47-.76-3.79h1.51m9.86 12.02c.85.24 1.72.39 2.6.45v1.49c-1.32-.09-2.59-.35-3.8-.75l1.2-1.19M7.5 3H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.49c0-.55-.45-1-1-1-1.24 0-2.45-.2-3.57-.57-.1-.04-.21-.05-.31-.05-.26 0-.51.1-.71.29l-2.2 2.2c-2.83-1.45-5.15-3.76-6.59-6.59l2.2-2.2c.28-.28.36-.67.25-1.02C8.7 6.45 8.5 5.25 8.5 4c0-.55-.45-1-1-1z" />
+          </svg>
+        </div>
+        <h1 class="">Card</h1>
+        <p>Lorem ipsum, dolor sit amet contur adipisicing elit</p>
+      </div>
+      <div class="sync-card">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
+            <path d="M0 0h24v24H0V0z" fill="none" />
+            <path
+              d="M6.54 5c.06.89.21 1.76.45 2.59l-1.2 1.2c-.41-1.2-.67-2.47-.76-3.79h1.51m9.86 12.02c.85.24 1.72.39 2.6.45v1.49c-1.32-.09-2.59-.35-3.8-.75l1.2-1.19M7.5 3H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.49c0-.55-.45-1-1-1-1.24 0-2.45-.2-3.57-.57-.1-.04-.21-.05-.31-.05-.26 0-.51.1-.71.29l-2.2 2.2c-2.83-1.45-5.15-3.76-6.59-6.59l2.2-2.2c.28-.28.36-.67.25-1.02C8.7 6.45 8.5 5.25 8.5 4c0-.55-.45-1-1-1z" />
+          </svg>
+        </div>
+        <h1 class="">Card</h1>
+        <p>Lorem ipsum, dolor sit amet contur adipisicing elit</p>
+      </div>
+    </div>
+    <div class="async-cards">
+      <div class="card card-left">left-card</div>
+      <div class="card card-top">top-card</div>
+      <div class="card card-bottom">bottom-card</div>
+      <div class="card card-right">right-card</div>
+    </div>
+    <div class="four-block">
+      <div class="side-block">
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic ipsa
+          fugit eveniet repellendus voluptas!
+        </p>
+        <p>
+          Officia aliquid iste impedit debitis cumque mollitia, vel quasi, rem
+          itaque neque est hic asperiores
+        </p>
+      </div>
+      <div class="center">
+        <a class="link" href="#">Voluptate praesentium labore</a>
+      </div>
+      <div class="side-block">
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic ipsa
+          fugit eveniet repellendus voluptas!
+        </p>
+        <p>
+          Officia aliquid iste impedit debitis cumque mollitia, vel quasi, rem
+          itaque neque est hic asperiores
+        </p>
+      </div>
+    </div>
+    <div class="bubble">
+      <div class="block-0">
+        <div class="diagonal block"></div>
+      </div>
+      <div class="block-1">
+        <h1 class="top">Top</h1>
+        <div class="top block"></div>
+      </div>
+      <div class="block-2">
+        <h1 class="bottom">Bottom</h1>
+        <div class="bottom block"></div>
+      </div>
+      <div class="block-3">
+        <h1 class="left">Left</h1>
+        <div class="right block"></div>
+      </div>
+      <div class="block-4">
+        <div class="left block"></div>
+        <h1 class="right">Right</h1>
+      </div>
     </div>
   </body>
 </html>

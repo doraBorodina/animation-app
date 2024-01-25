@@ -82,7 +82,7 @@ body {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  padding: 100px 0;
+  padding: 130px 0;
 }
 
 .navigation {
@@ -125,25 +125,74 @@ body {
 }
 
 .order {
-  position: absolute;
-  bottom: 50px;
-  right: 0px;
-}
-
-.order a {
-  padding: 10px 20px;
-  border-radius: 4px;
-  border: 1px solid var(--secondary);
-  background: inherit;
   color: var(--secondary);
+  background: var(--primary);
+  border: 1px solid var(--secondary);
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-transform: uppercase;
   transition: 0.4s;
 }
 
-.order a:hover {
+.rectangular-button {
+  height: 40px;
+  width: 140px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.round-button {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  position: fixed;
+  z-index: 10;
+  bottom: 50px;
+  right: 50px;
+}
+
+.round-button-2 {
+  height: 50px;
+  min-width: 50px;
+  border-radius: 25px;
+  position: fixed;
+  z-index: 10;
+  bottom: 50px;
+  right: 150px;
+}
+
+.round-button-2:hover svg {
+  display: none;
+}
+
+.round-button-2 span {
+  display: none;
+  margin: 0 20px;
+}
+
+.round-button-2:hover span {
+  display: block;
+}
+
+.remove {
+  display: none;
+}
+
+.order > svg {
+  fill: var(--secondary);
+}
+
+.order:hover > svg {
+  fill: var(--primary);
+  transition: 0.4s;
+}
+
+.order:hover {
   background: var(--secondary);
   color: var(--primary);
+  cursor: pointer;
 }
 
 .content {
@@ -264,13 +313,13 @@ body {
 .stats img {
   position: absolute;
   width: 43%;
-  left: -43%;
+  left: 10%;
 }
 
 .stats section {
   position: absolute;
   width: 35%;
-  right: -35%;
+  right: 10%;
 }
 
 .stats h3 {
@@ -367,4 +416,162 @@ body {
 
 .banana {
   background-color: var(--banana);
+}
+
+.block-1 {
+  display: flex;
+  align-items: center;
+
+  margin: 20px 0px;
+  width: 100%;
+  height: 300px;
+  background-color: #7f8f4e;
+}
+
+.block-2 {
+  display: flex;
+  align-items: center;
+
+  margin: 20px 0px;
+  width: 100%;
+  height: 300px;
+  background-color: #f2ed68;
+}
+
+.block-3 {
+  display: flex;
+  justify-content: center;
+
+  margin: 20px 0px;
+  width: 100%;
+  height: 300px;
+  background-color: #845388;
+}
+
+.block-4 {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+
+  margin: 20px 0px;
+  width: 100%;
+  height: 300px;
+  background-color: #ec5959;
+}
+
+.block-0 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 500px;
+  background-color: #59caec;
+}
+
+.opacity {
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.opacity h1 {
+  opacity: 0;
+}
+
+.async-cards {
+  display: flex;
+  justify-content: space-around;
+  padding: 100px 10px;
+  overflow: hidden;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 300px;
+  height: 400px;
+  background-color: #b8e0ae;
+}
+
+.sync-cards {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px;
+  margin-bottom: 150px;
+}
+
+.sync-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 300px;
+  height: 400px;
+  background-color: #b3d0f7;
+
+  padding: 50px;
+}
+
+.sync-card p {
+  text-align: center;
+}
+
+
+.four-block {
+  display: flex;
+  justify-content: space-between;
+
+  height: 600px;
+
+  margin-top: 30px;
+  margin-bottom: 100px;
+  padding: 0px 230px;
+}
+
+.center {
+  display: flex;
+  justify-content: end;
+  flex-direction: column;
+  height: 100%;
+  width: 400px;
+  background-color: #a79fdb;
+  overflow: hidden;
+}
+
+.side-block{
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+
+  width: 300px;
+  font-size: 20px;
+}
+.side-block p {
+  margin-top: 100px;
+}
+
+.link {
+  width: fit-content;
+  padding: 10px;
+  background-color: #f9f466;
+  color: #000;
+}
+
+.block-list-stager,
+.block-list {
+  width: 100%;
+  padding: 20px;
+  will-change: transform;
+}
+
+.list-stager-item,
+.list-item {
+  display: block;
+  width: fit-content;
+  margin-bottom: 10px;
 }
