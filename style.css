@@ -523,6 +523,7 @@ body {
 
 
 .four-block {
+  will-change: transform;
   display: flex;
   justify-content: space-between;
 
@@ -544,6 +545,7 @@ body {
 }
 
 .side-block{
+  will-change: transform;
   display: flex;
   flex-direction: column;
   justify-content: end;
@@ -552,7 +554,9 @@ body {
   font-size: 20px;
 }
 .side-block p {
+  will-change: transform;
   margin-top: 100px;
+  margin-bottom: 0px;
 }
 
 .link {
@@ -560,6 +564,12 @@ body {
   padding: 10px;
   background-color: #f9f466;
   color: #000;
+}
+
+.end {
+  margin-bottom: 50%;
+  height: 10px;
+  width: 100%;
 }
 
 .block-list-stager,

@@ -28,6 +28,7 @@ const initCounters = (counters) => {
  * triggerClass?: string;
  * withOpacity?: booleam;
  * stagger?: number;
+ * scrub?: boolean | number;
  */
 const addFloating = (elements) => {
   if (!Array.isArray(elements)) {
@@ -36,7 +37,12 @@ const addFloating = (elements) => {
   elements.forEach((element) => {
     const config = {
       duration: element.duration,
-      scrollTrigger: element.triggerClass,
+      scrollTrigger: {
+        trigger: element.triggerClass,
+        scrub: element.scrub,
+        start: element.start,
+        end: element.end ?? "center bottom",
+      },
       delay: element.delay,
       opacity: element.withOpacity ? 0 : undefined,
       stagger: element.stagger,
@@ -78,6 +84,51 @@ const addFloating = (elements) => {
   });
 };
 
+/*function initScrollDirectionIndicator() {
+  gsap.registerPlugin(ScrollTrigger);
+
+  ScrollTrigger.create({
+    trigger: ".sync-card",
+    onUpdate: (self) => {
+      if (self.direction === 1) {
+        const cards = document.querySelectorAll(".sync-card");
+        cards.forEach((card) => {
+          card.classList.add("scrolling-down");
+          card.classList.remove("scrolling-up");
+        });
+      } else {
+        cards.forEach((card) => {
+          card.classList.add("scrolling-up");
+          card.classList.remove("scrolling-down");
+        });
+      }
+    },
+    onLeaveBack: () => {
+      body.classList.remove("scrolling-up");
+    },
+  });
+}
+
+document.addEventListener("DOMContentLoaded", (event) => {
+  initScrollDirectionIndicator();
+});*/
+
+const yoyoAnimation = () => {
+  let tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".four-block",
+      start: "50% center",
+      end: "90% center",
+      markers: true,
+      scrub: 2,
+    },
+  });
+
+  tl.addLabel("text")
+    .from(".side-block", { y: -300, duration: 5 })
+    .from(".link", { y: 50, duration: 0.5 }, "-=1");
+};
+
 ///////////////////////////////////////////////
 gsap.registerPlugin(ScrollTrigger);
 initCounters({
@@ -95,6 +146,7 @@ const headerAnimationObjects = [
     duration: 1,
     triggerClass: ".title",
     withOpacity: true,
+    scrub: true,
   },
   {
     class: ".img-left",
@@ -103,8 +155,8 @@ const headerAnimationObjects = [
     duration: 1,
     triggerClass: ".title",
     withOpacity: true,
+    scrub: 2,
   },
-
   {
     class: ".img-right",
     direction: "bottom",
@@ -112,6 +164,7 @@ const headerAnimationObjects = [
     duration: 1,
     triggerClass: ".title",
     withOpacity: true,
+    scrub: true,
   },
 ];
 const blocksAnimationObjects = [
@@ -121,6 +174,10 @@ const blocksAnimationObjects = [
     offset: 100,
     duration: 1,
     triggerClass: ".top",
+    scrub: true,
+    start: "10% 70%",
+    end: "+=60%",
+    withOpacity: true,
   },
   {
     class: ".bottom",
@@ -128,6 +185,10 @@ const blocksAnimationObjects = [
     offset: 100,
     duration: 1,
     triggerClass: ".bottom",
+    scrub: true,
+    start: "10% 70%",
+    end: "+=60%",
+    withOpacity: true,
   },
   {
     class: ".left",
@@ -135,6 +196,10 @@ const blocksAnimationObjects = [
     offset: 300,
     duration: 3,
     triggerClass: ".left",
+    scrub: true,
+    start: "10% 70%",
+    end: "+=60%",
+    withOpacity: true,
   },
   {
     class: ".right",
@@ -142,6 +207,10 @@ const blocksAnimationObjects = [
     offset: 300,
     duration: 3,
     triggerClass: ".right",
+    scrub: true,
+    start: "10% 70%",
+    end: "+=60%",
+    withOpacity: true,
   },
   {
     class: ".diagonal",
@@ -149,6 +218,9 @@ const blocksAnimationObjects = [
     offset: 100,
     duration: 3,
     triggerClass: ".diagonal",
+    scrub: true,
+    start: "10% 70%",
+    end: "+=60%",
   },
   {
     class: ".diagonal",
@@ -156,35 +228,24 @@ const blocksAnimationObjects = [
     offset: 100,
     duration: 3,
     triggerClass: ".diagonal",
+    scrub: true,
+    start: "10% 70%",
+    end: "+=60%",
+    withOpacity: true,
   },
 ];
 const fourBlocks = [
   {
-    class: ".side-block",
-    direction: "top",
-    offset: 300,
-    duration: 2,
-    triggerClass: ".side-block",
-    withOpacity: true,
-  },
-  {
     class: ".center",
     direction: "bottom",
-    offset: 300,
+    offset: -300,
     duration: 1,
-    triggerClass: ".center",
-    withOpacity: true,
-  },
-  {
-    class: ".link",
-    direction: "bottom",
-    offset: 50,
-    duration: 0.5,
-    delay: 1,
-    triggerClass: ".center",
+    triggerClass: ".four-block",
     withOpacity: true,
   },
 ];
+yoyoAnimation();
+
 const directions = ["left", "top", "right", "bottom"];
 const asyncCards = directions.map((dir) => {
   return {
@@ -192,8 +253,11 @@ const asyncCards = directions.map((dir) => {
     direction: dir,
     offset: 200,
     duration: 1,
-    triggerClass: `.card-${dir}`,
+    triggerClass: `.async-cards`,
     withOpacity: true,
+    scrub: true,
+    start: "10% center",
+    end: "+=30%",
   };
 });
 
@@ -206,6 +270,9 @@ const syncCards = [
     triggerClass: ".sync-cards",
     withOpacity: true,
     stagger: 0.25,
+    scrub: true,
+    start: "10% 70%",
+    end: "+=60%",
   },
   {
     class: ".sync-card div",
@@ -240,15 +307,27 @@ addFloating([
 ///////////////////////
 
 gsap.from(".list-stager-item", {
-  duration: 3,
-  x: (i) => 50 + 80 * (5 - Math.abs(5 - i)),
-  scrollTrigger: ".block-list-stager",
+  duration: 2,
+  x: (i) => {
+    return 80 - 2 * Math.abs(5 - i) ** 2;
+  },
+  opacity: 0.5,
+  scrollTrigger: {
+    trigger: ".block-list-stager",
+    toggleActions: "restart none none none",
+  },
 });
+
 gsap.from(".list-item", {
   duration: 2,
   y: (i) => 10 * i,
   opacity: 0,
-  scrollTrigger: ".block-list",
+  scrollTrigger: {
+    trigger: ".block-list",
+    start: "top-=100 center",
+    end: "bottom+=200 center",
+    scrub: 2,
+  },
 });
 
 ////////////////////////

@@ -4,7 +4,6 @@
         animation: shadow 1s infinite linear;
     }
 }
-
 @keyframes shadow {
     0% {
         box-shadow: 0 0 0 0 #7f8f4e;
@@ -18,10 +17,18 @@
         box-shadow: 0 0 0 0 rgba(94, 223, 255, 0);
     }
 }
-
-
 .block {
     height: 100px;
     width: 100px;
     background-color: #fff;
+}
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    font-size: 1.25em;
+    line-height: 1.5;
+    margin: 0;
 }

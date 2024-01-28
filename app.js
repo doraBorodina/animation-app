@@ -28,13 +28,18 @@ window.addEventListener("scroll", () => {
   }
 });
 /*
-  - bouncing button
-  - flushing button
+  I made the demo for the following changes:
+  - bouncing block
+  - flushing block
   - button with icon which on hover is turning into a button with text
   - anchor buttons (if a button is out of view port, another sticky button appeares in the left bottom)
   - items list triangle animation
   - counters
-  - blocks stagged floating animation
+  - stagged animation of blocks popping up
   - block with image in the center and 4 side text blocks 
-  - ability to add top/left/bottom/right floating animation to any element or group of elements
+  - animation of any element or group of elements popping up from left, right etc., with opacity or not
+
+  This animations can be combained which will allow u to create a variety of different effects depends on your needs
+
+  Demo can be found here: https://doraborodina.github.io/animation-app/
  */
